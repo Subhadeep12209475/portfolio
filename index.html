@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+<style>
+
+/* ======================================
+   PROFESSIONAL PORTFOLIO UI SYSTEM
+====================================== */
+
+:root {
+  --bg: #0b0b0b;
+  --bg-section: #111;
+  --text: #ffffff;
+  --text-muted: #bdbdbd;
+  --accent: #fbbd08;
+}
+
+/* LIGHT MODE */
+body.light-theme {
+  --bg: #ffffff;
+  --bg-section: #f5f5f5;
+  --text: #111111;
+  --text-muted: #555555;
+  --accent: #6c63ff;
+}
+
+/* GLOBAL */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s ease;
+}
+
+section {
+  background: var(--bg);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* ================================
+   HERO TEXT (PROFESSIONAL)
+================================ */
+
+.hero-name {
+  font-weight: 900;
+  font-size: clamp(52px, 6vw, 86px);
+  background: linear-gradient(
+    120deg,
+    var(--accent),
+    #ffffff,
+    var(--accent)
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heroGradient 6s ease infinite;
+}
+
+/* subtle animation */
+@keyframes heroGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* soft glow */
+.hero-name::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  background: inherit;
+  filter: blur(30px);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* very subtle background glow */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: var(--accent);
+  filter: blur(160px);
+  opacity: 0.12;
+  top: -120px;
+  left: -120px;
+}
+
+.hero .container,
+.hero .text {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.btn-primary {
+  background: var(--accent) !important;
+  border: none;
+  color: #000;
+  border-radius: 40px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+
+#ftco-navbar {
+  background: rgba(0,0,0,0.85) !important;
+  backdrop-filter: blur(8px);
+}
+
+.nav-link span {
+  transition: 0.3s;
+}
+
+.nav-link:hover span {
+  color: var(--accent) !important;
+}
+
+/* ================================
+   CARDS / BOXES
+================================ */
+
+.resume-wrap,
+.blog-entry,
+.box {
+  border-radius: 14px;
+  transition: 0.3s ease;
+}
+
+.resume-wrap:hover,
+.blog-entry:hover,
+.box:hover {
+  transform: translateY(-6px);
+}
+/* ================================
+   NAVBAR UNDERLINE ANIMATION
+================================ */
+
+.navbar-nav .nav-link {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.navbar-nav .nav-link span {
+  position: relative;
+  display: inline-block;
+}
+
+/* underline */
+.navbar-nav .nav-link span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+/* hover */
+.navbar-nav .nav-link:hover span::after {
+  width: 100%;
+}
+
+/* active link */
+.navbar-nav .nav-item.active span::after {
+  width: 100%;
+}
+/* ================================
+   SCROLL REVEAL EFFECT
+================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ================================
+   PREMIUM BUTTON ANIMATION
+================================ */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+/* subtle glow */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.25),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+/* click feel */
+.btn:active {
+  transform: translateY(-1px);
+}
+/* ================================
+   PROJECT CARD HOVER EFFECT
+================================ */
+
+.blog-entry {
+  transition: all 0.35s ease;
+}
+
+.blog-entry:hover {
+  transform: translateY(-10px);
+}
+
+/* image smooth zoom */
+.blog-entry .block-20 {
+  transition: transform 0.4s ease;
+}
+
+.blog-entry:hover .block-20 {
+  transform: scale(1.08);
+}
+
+/* soft shadow */
+.blog-entry:hover {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* title highlight */
+.blog-entry h3 a {
+  transition: color 0.3s ease;
+}
+
+.blog-entry:hover h3 a {
+  color: var(--accent);
+}
+/* ================================
+   GLASS NAVBAR EFFECT
+================================ */
+
+#ftco-navbar {
+  background: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.3s ease;
+}
+
+/* light theme support */
+body.light-theme #ftco-navbar {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* navbar text clarity */
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+body.light-theme .navbar-dark .navbar-nav .nav-link {
+  color: #111;
+}
+/* ==============================
+   PROFESSIONAL MOTION SYSTEM
+================================ */
+
+* {
+  scroll-behavior: smooth;
+}
+
+section {
+  position: relative;
+  animation: fadeSection 0.9s ease both;
+}
+
+@keyframes fadeSection {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   HERO SECTION – PROFESSIONAL REBUILD
+============================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #0b0b0b;
+  overflow: hidden;
+}
+
+/* subtle depth background */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,189,8,0.08), transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(123,92,255,0.08), transparent 45%);
+  pointer-events: none;
+}
+
+/* center content */
+.hero .text {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* main heading */
+.hero h1 {
+  font-size: clamp(52px, 6vw, 86px);
+  font-weight: 900;
+  letter-spacing: -1.2px;
+  margin-bottom: 15px;
+}
+
+/* name highlight */
+.hero h1 span {
+  color: var(--accent);
+}
+
+/* typing text */
+#typing-animation {
+  font-size: 26px;
+  margin-top: 10px;
+  color: #e0e0e0;
+}
+
+/* subtitle */
+.hero h2 {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #bdbdbd;
+  font-weight: 500;
+}
+
+/* buttons */
+.hero .btn {
+  margin-top: 25px;
+  padding: 14px 34px;
+  font-weight: 600;
+  border-radius: 40px;
+  transition: 0.35s ease;
+}
+
+.hero .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255,189,8,0.35);
+}
+
+.hero .btn-outline-white:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* entrance animation */
+.hero .text {
+  animation: heroFade 1.2s ease forwards;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===================================================
+   SECTION DIVIDERS – PROFESSIONAL UI
+=================================================== */
+
+/* give sections breathing space */
+section {
+  position: relative;
+  padding: 100px 0;
+}
+
+/* divider line */
+section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.15),
+    transparent
+  );
+}
+
+/* do not show divider on last section */
+section:last-of-type::after {
+  display: none;
+}
+
+/* soft fade divider for hero */
+#home-section::after {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,189,8,0.25),
+    transparent
+  );
+}
+
+/* slightly brighter divider for major sections */
+#about-section::after,
+#project-section::after,
+#resume-section::after {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+}
+
+
+/* ===============================
+   CERTIFICATIONS SECTION
+================================ */
+
+#certification-section {
+  background: #0b0b0b;
+  padding: 90px 0;
+}
+
+.cert-box {
+  max-width: 850px;
+  margin: auto;
+  background: #111;
+  border-radius: 14px;
+  padding: 30px 40px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.cert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.cert-item:last-child {
+  border-bottom: none;
+}
+
+.cert-title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.cert-date {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* hover polish */
+.cert-item:hover {
+  background: rgba(255,255,255,0.02);
+  padding-left: 6px;
+  transition: 0.25s ease;
+}
+
+
+
+/* ================================
+   SECTION HEADING STYLE (REUSABLE)
+================================ */
+
+.section-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.section-title p {
+  margin-top: 10px;
+  color: #bdbdbd;
+  font-size: 16px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title .bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.04);
+  white-space: nowrap;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* =====================================
+   ABOUT SECTION — PREMIUM UPGRADE
+===================================== */
+
+#about-section {
+  padding: 90px 0;
+  background: #0b0b0b;
+}
+
+/* SECTION HEADING */
+#about-section .heading-section h2 {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+#about-section .heading-section p {
+  max-width: 620px;
+  margin: auto;
+  font-size: 16px;
+  color: #bdbdbd;
+}
+
+/* ================================
+   LEFT CARD
+================================ */
+
+.about-card {
+  background: linear-gradient(180deg, #111, #0b0b0b);
+  border-radius: 18px;
+  padding: 35px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  transition: 0.4s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+}
+
+/* PROFILE IMAGE */
+.about-img {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: auto;
+  display: block;
+  border: 4px solid #fbbd08;
+  box-shadow: 0 0 30px rgba(251, 189, 8, 0.35);
+}
+
+/* DETAILS */
+.about-details {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.about-details li {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+}
+
+.about-details strong {
+  color: #fbbd08;
+}
+
+/* ================================
+   SKILLS
+================================ */
+
+.skills h5 {
+  margin-top: 25px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.skill {
+  margin-bottom: 14px;
+}
+
+.skill span {
+  font-size: 14px;
+  color: #fff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.skill .bar {
+  width: 100%;
+  height: 7px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.skill .bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #fbbd08, #ffce55);
+  border-radius: 20px;
+  animation: skillFill 1.8s ease forwards;
+}
+
+/* skill animation */
+@keyframes skillFill {
+  from { width: 0; }
+}
+
+/* ================================
+   RIGHT CONTENT
+================================ */
+
+.about-content {
+  padding-left: 30px;
+}
+
+.about-content h3 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cfcfcf;
+  margin-bottom: 14px;
+}
+
+/* ================================
+   INFO GRID
+================================ */
+
+.about-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 30px;
+  margin-top: 25px;
+  font-size: 15px;
+}
+
+.about-info-grid div {
+  color: #dcdcdc;
+}
+
+.about-info-grid strong {
+  color: #fbbd08;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+  .about-content {
+    padding-left: 0;
+    margin-top: 40px;
+  }
+
+  .about-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== Premium Contact Effects ===== */
+
+.contact-section .box {
+  background: #111;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-section .box:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 255, 255, 0.15);
+  border-color: #00f5ff;
+}
+
+.contact-section .box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0, 245, 255, 0.25),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.contact-section .box:hover::before {
+  transform: translateX(100%);
+}
+
+.contact-section .icon span {
+  font-size: 32px;
+  color: #00f5ff;
+  transition: 0.3s ease;
+}
+
+.contact-section .box:hover .icon span {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 5px #00f5ff;
+  }
+  50% {
+    transform: scale(1.25);
+    text-shadow: 0 0 20px #00f5ff;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 5px #00f5ff;
+  }
+}
+
+.ftco-footer-social li a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  transition: 0.4s;
+  margin: 0 8px;
+}
+
+.ftco-footer-social li a:hover {
+  background: #00f5ff;
+  color: #000;
+  box-shadow: 0 0 20px #00f5ff, 0 0 40px #00f5ff;
+  transform: translateY(-6px);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================================
+   GLOBAL PREMIUM PORTFOLIO EFFECTS
+===================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(70px) scale(0.98);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Smooth hover lift for cards */
+.resume-wrap,
+.blog-entry,
+.box {
+  transition: all 0.45s ease;
+  border-radius: 16px;
+}
+
+.resume-wrap:hover,
+.blog-entry:hover,
+.box:hover {
+  transform: translateY(-14px) scale(1.02);
+  box-shadow: 0 25px 70px rgba(0, 255, 255, 0.15);
+}
+
+/* Premium glow border */
+.resume-wrap::after,
+.blog-entry::after,
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.resume-wrap:hover::after,
+.blog-entry:hover::after,
+.box:hover::after {
+  opacity: 1;
+}
+
+/* Headings subtle glow */
+.heading-section h2 {
+  text-shadow: 0 0 12px rgba(0, 245, 255, 0.15);
+}
+
+/* Social icon hover */
+.ftco-footer-social li a:hover {
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 0 25px #00f5ff;
+}
+
+/* ===== ULTRA GRADIENT BORDER ===== */
+
+.ultra-card {
+  position: relative;
+  border-radius: 18px;
+  background: rgba(15, 15, 15, 0.85);
+  overflow: hidden;
+}
+
+.ultra-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    120deg,
+    #00f5ff,
+    #7c7cff,
+    #ff00ff,
+    #00f5ff
+  );
+  background-size: 300% 300%;
+  animation: borderMove 6s linear infinite;
+  z-index: -1;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+
+
+</style>
+
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Portfolio </a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	  <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel">
+	       <div class="slider-item ">
+	      	<div class="overlay"></div>
+	         <div class="container">
+	          <div class="row d-flex justify-content-center align-items-center text-center"
+     style="min-height: 100vh;"
+     data-scrollax-parent="true">
+
+							<div class="one-third js-fullheight order-md-last img"  
+     style="background-image: url('images/'); width: 500px; height: 200px; display: none;">
+	          	 <div class="overlay"></div>
+	          	</div>
+		          <div class="one-forth ftco-animate">
+		          	<div class="text">
+		          		<span class="subheading">Hello!</span>
+			            <h1 class="mb-4 mt-3">
+  I'm <span class="hero-name">Subhadeep</span><br>
+  <span class="hero-name">Mukherjee</span>
+</h1>
+
+
+						<!-- Element to contain animated typing -->
+						<span id="typing-animation"></span>
+
+						<script>
+
+						// Initialize the typing animation
+						const typingAnimationElement = document.getElementById('typing-animation');
+
+						// Create an array of typing text
+						const typingTexts = [
+						'Student ',
+						'Data Analyst  ',
+						'Java Developer  ',
+						];
+
+						// Create a function to display the typing animation for a given text
+						function playTypingAnimation(text) {
+						// Loop through each character and add it to the element
+						for (let i = 0; i < text.length; i++) {
+							setTimeout(() => {
+							typingAnimationElement.textContent += text[i];
+							}, i * 200); // Increase the delay to slow down the typing animation
+						}
+
+						// Once the animation is complete, reset the text and start over
+						setTimeout(() => {
+							typingAnimationElement.textContent = '';
+							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+						}, text.length * 200);
+						}
+
+						// Start the typing animation loop
+						playTypingAnimation(typingTexts[0]);
+
+						</script>
+
+						<br>
+						<br>
+			            <h2>A Data Analyst</h2>
+						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+						<!-- <br> -->
+			            <p><a href="https://www.linkedin.com/in/subhadeep-mukherjee-1b9343259/" class="btn btn-primary py-3 px-4">LinkedIn</a> 
+							<a href="https://github.com/Subhadeep12209475?tab=repositories" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
+		            </div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+		</div>
+    </section>
+
+
+
+    <section class="ftco-about ftco-section" id="about-section">
+  <div class="container">
+
+    <!-- SECTION HEADING -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-10 text-center heading-section ftco-animate">
+        <h1 class="big big-2">About</h1>
+        <h2 class="mb-4">About Me</h2>
+        <p class="text-muted">
+          A brief overview of my background, skills, and professional focus.
+        </p>
+      </div>
+    </div>
+
+    <div class="row align-items-center">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-md-5 ftco-animate">
+
+        <div class="about-card">
+
+          <img src="images/MyProfile.jpg" alt="Profile" class="about-img">
+
+          <ul class="about-details">
+            <li><strong>Name:</strong> Subhadeep Mukherjee</li>
+            <li><strong>Role:</strong> Data Analyst</li>
+            <li><strong>Location:</strong> Bankura, West Bengal</li>
+          </ul>
+
+          <div class="skills mt-4">
+            <h5 class="mb-3">Technical Skills</h5>
+
+
+            <div class="skill">
+              <span>Java</span>
+              <div class="bar"><span style="width:90%"></span></div>
+            </div>
+						<div class="skill">
+              <span>Python</span>
+              <div class="bar"><span style="width:80%"></span></div>
+            </div>
+						<div class="skill">
+              <span>Excel</span>
+              <div class="bar"><span style="width:95%"></span></div>
+            </div>
+						<div class="skill">
+              <span>SQL</span>
+              <div class="bar"><span style="width:85%"></span></div>
+            </div>
+
+            <div class="skill">
+              <span>Data Visualization</span>
+              <div class="bar"><span style="width:90%"></span></div>
+            </div>
+
+            <div class="skill">
+              <span>Data Analysis</span>
+              <div class="bar"><span style="width:90%"></span></div>
+            </div>
+
+            <div class="skill">
+              <span>Machine Learning</span>
+              <div class="bar"><span style="width:70%"></span></div>
+            </div>
+						<div class="skill">
+              <span>Web Development</span>
+              <div class="bar"><span style="width:60%"></span></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-md-7 ftco-animate">
+
+        <div class="about-content">
+
+          <h3 class="mb-4">Professional Summary</h3>
+
+          <p>
+            Experienced in building data-driven applications using Python, SQL, Java, and cloud-based technologies, along with developing scalable web applications using  Frontend and Backend.
+          </p>
+
+          <p>
+            Skilled in transforming raw data into actionable insights through data analysis, visualization, and machine learning models, while also applying software engineering principles to deliver efficient, real-world solutions.
+          </p>
+					<p>
+						Actively strengthening problem-solving and system design skills through hands-on projects and continuous learning.
+          </p>
+
+          <div class="about-info-grid mt-4">
+            <div><strong>Profile:</strong> Data Science & Analytics</div>
+            <div><strong>Domain:</strong> Data Science</div>
+            <div><strong>Education:</strong> Bachelor of Technologie</div>
+            <div><strong>Languages:</strong> English, Hindi, Bengali</div>
+            <div><strong>BI Tools:</strong>  Tableau, Excel, Git, GitHub, Postman, RStudio</div>
+            <div><strong>Technologies/Frameworks:</strong> Spark,Pandas, NumPy, React, Node.js,Matplotlib </div>
+            <div><strong>Interests:</strong> Traveling, Photography, Listing Story</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+	
+    <section class="ftco-section ftco-no-pb reveal" id="resume-section">
+  <div class="container">
+
+    <!-- Resume Heading -->
+    <div class="row justify-content-center pb-5">
+      <div class="col-md-10 heading-section text-center ftco-animate">
+        <h1 class="big big-2">Resume</h1>
+        <h2 class="mb-4">Resume</h2>
+        <p>
+          Passionate Computer Science undergraduate with strong interest in
+          Data Science, Backend Development, and building scalable,
+          data-driven solutions using analytics and machine learning concepts.
+        </p>
+      </div>
+    </div>
+
+    <!-- Download CV -->
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6 text-center ftco-animate">
+        <p>
+          <a
+            href="https://drive.google.com/file/d/1ulnvR7qZyUdYJN3KKbsyIC6O2RRXavN3/view?usp=sharing"
+            target="_blank"
+            class="btn btn-primary py-4 px-5"
+          >
+            Download CV
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ftco-section reveal" id="education-section">
+  <div class="container">
+
+    <!-- Education Heading -->
+    <div class="row justify-content-center pb-5">
+      <div class="col-md-10 heading-section text-center ftco-animate">
+        <h1 class="big big-2">Education</h1>
+        <h2 class="mb-4">Education</h2>
+        <p>
+          Academic background reflecting strong foundation in computer science,
+          analytical thinking, and problem-solving skills.
+        </p>
+      </div>
+    </div>
+
+    <!-- Education Cards -->
+    <div class="row">
+
+      <!-- B.Tech -->
+      <div class="col-md-6">
+        <div class="resume-wrap ftco-animate">
+          <span class="date">Sep 2022 – Present</span>
+          <h2>B.Tech in CSE in Data Science </h2>
+          <span class="position">Lovely Professional University</span>
+          <p class="mt-3"><strong>CGPA:</strong> 7.1</p>
+          <p class="location">Punjab, India</p>
+        </div>
+      </div>
+
+      <!-- Higher Secondary -->
+      <div class="col-md-6">
+        <div class="resume-wrap ftco-animate">
+          <span class="date">Apr 2019 – Jul 2021</span>
+          <h2>Higher Secondary (PCMB)</h2>
+          <span class="position">Lego RBRK High School</span>
+          <p class="mt-3"><strong>Percentage:</strong> 94.20%</p>
+          <p class="location">Bankura, West Bengal</p>
+        </div>
+      </div>
+
+      <!-- Matriculation -->
+      <div class="col-md-6">
+        <div class="resume-wrap ftco-animate">
+          <span class="date">Jan 2018 – Jun 2019</span>
+          <h2>Matriculation</h2>
+          <span class="position">Lego RBRK High School</span>
+          <p class="mt-3"><strong>Percentage:</strong> 89.5%</p>
+          <p class="location">Bankura, West Bengal</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+   
+
+    <!-- =======================
+     DEVELOPMENT PROJECTS
+======================== -->
+
+<section class="ftco-section" id="development-section">
+  <div class="container">
+
+    <!-- Section Heading -->
+    <div class="section-title">
+      <span class="bg-text">Dev</span>
+      <h2>Development Projects</h2>
+      <p>
+        Full-stack and frontend applications focused on scalable architecture,
+        real-world use cases, and clean UI/UX design.
+      </p>
+    </div>
+
+    <div class="row d-flex">
+
+      <!-- Project 1 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+
+          <div class="block-20"
+               style="background-image: url('images/online-shopping.jpg');">
+          </div>
+
+          <div class="text mt-3">
+            <h3>E-Commerce Web Application</h3>
+            <p>
+              Built a full-featured shopping platform with authentication,
+              product listing, cart management, and order placement functionality.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+
+          <div class="block-20"
+               style="background-image: url('images/placement.jpg');">
+          </div>
+
+          <div class="text mt-3">
+            <h3>Placement Preparation Web Application</h3>
+            <p>
+              Centralized platform enabling students to plan daily preparation,
+              track progress, manage tasks, and stay motivated throughout placement season.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+
+          <div class="block-20"
+               style="background-image: url('images/alumni1.jpg');">
+          </div>
+
+          <div class="text mt-3">
+            <h3>Alumni Intelligence Platform</h3>
+            <p>
+              MERN-based alumni networking system enabling mentorship, messaging,
+              events, and AI-driven alumni recommendations using profile similarity.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- =======================
+     DATA SCIENCE PROJECTS
+======================== -->
+
+<section class="ftco-section reveal" id="data-science-projects">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 heading-section text-center ftco-animate">
+        <h1 class="big big-2">Data Science</h1>
+        <h2 class="mb-4">Data Science Projects</h2>
+        <p>
+          Analytics and machine learning projects focused on real-world insights,
+          dashboards, and predictive modeling.
+        </p>
+      </div>
+    </div>
+
+    <div class="row d-flex">
+
+      <!-- Project 1 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+          <a href="https://github.com/Subhadeep12209475/Hospital-Emergency-Room-Analytics-Dashboard.git"
+             class="block-20 zoom-effect"
+             style="background-image: url('images/Real-Time-Emergency-Room-Data.png');"></a>
+
+          <div class="text mt-3">
+            <h3 class="heading">
+              <a href="https://github.com/Subhadeep12209475/Hospital-Emergency-Room-Analytics-Dashboard.git">Hospital Emergency Room Analytics Dashboard</a>
+            </h3>
+            <p>
+              Built an interactive Excel dashboard analyzing patient flow,
+              wait times, admission rates, and service efficiency using
+              Power Query and Power Pivot.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+          <a href="https://github.com/Subhadeep12209475/Credit-Card-Fraud-Detection.git"
+             class="block-20 zoom-effect"
+             style="background-image: url('images/Credit.jpg');"></a>
+
+          <div class="text mt-3">
+            <h3 class="heading">
+              <a href="https://github.com/Subhadeep12209475/Credit-Card-Fraud-Detection.git">Fraudulent Transaction Detection</a>
+            </h3>
+            <p>
+              Developed a machine learning model using Logistic Regression
+              to detect fraudulent credit card transactions and reduce
+              financial risk.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+          <a href="https://github.com/Subhadeep12209475/Car-Sales-Dashboard.git"
+             class="block-20 zoom-effect"
+             style="background-image: url('images/car.jpg');"></a>
+
+          <div class="text mt-3">
+            <h3 class="heading">
+              <a href="https://github.com/Subhadeep12209475/Car-Sales-Dashboard.git">Interactive Car Sales Analytics Dashboard</a>
+            </h3>
+            <p>
+              Designed Tableau dashboards using KPIs, heatmaps, and calculated
+              fields to analyze regional demand, revenue trends, and
+              top-selling vehicle models.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+          <a href="https://github.com/Subhadeep12209475/IPL.git"
+             target="_blank"
+             class="block-20 zoom-effect"
+             style="background-image: url('images/IPL1.png');"></a>
+
+          <div class="text mt-3">
+            <h3 class="heading">
+              <a href="https://github.com/Subhadeep12209475/IPL.git" target="_blank">
+                IPL Data Analysis Dashboard
+              </a>
+            </h3>
+            <p>
+              Built an Excel-based dashboard using pivot tables and charts
+              to analyze team performance, match outcomes, and player statistics.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ NEW PROJECT : Weather -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+          <a href="https://github.com/Subhadeep12209475/Weather-Analysis.git"
+             class="block-20 zoom-effect"
+             style="background-image: url('images/weather-prediction-modeling.png');"></a>
+
+          <div class="text mt-3">
+            <h3 class="heading">
+              <a href="https://github.com/Subhadeep12209475/Weather-Analysis.git">Weather Data Analysis & Predictive Modeling</a>
+            </h3>
+            <p>
+              Performed statistical analysis on historical weather data and
+              applied Linear Regression to predict temperature and humidity
+              trends using Python, NumPy, Matplotlib, and data visualization.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="ftco-section" id="certification-section">
+  <div class="container">
+
+    <div class="section-title">
+  <span class="bg-text">Certifications</span>
+  <h2>Certifications</h2>
+  <p>Industry-recognized certifications supporting my technical expertise</p>
+</div>
+
+    <div class="row d-flex">
+
+      <!-- Certificate 1 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+
+          <div class="block-20"
+               style="background-image: url('images/Agentforce\ Specialist\ Certification.png');">
+          </div>
+
+          <div class="text mt-3">
+            <h3>Salesforce Certification – Agentic AI</h3>
+            <p>Focused on intelligent agent systems, automation workflows, and AI-driven decision making.</p>
+            <span class="project-tag">Oct 2025</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+
+          <div class="block-20"
+               style="background-image: url('images/cloud-computing.jpg');">
+          </div>
+
+          <div class="text mt-3">
+            <h3>Cloud Computing – NPTEL</h3>
+            <p>Comprehensive training in cloud architecture, virtualization, and distributed systems.</p>
+            <span class="project-tag">Nov 2024</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+
+          <div class="block-20"
+               style="background-image: url('images/tableau.png');">
+          </div>
+
+          <div class="text mt-3">
+            <h3>Data Analysis with Tableau</h3>
+            <p>Hands-on visualization techniques using dashboards, KPIs, and storytelling with data.</p>
+            <span class="project-tag">Dec 2024</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry">
+
+          <div class="block-20"
+               style="background-image: url('images/supervised.png');">
+          </div>
+
+          <div class="text mt-3">
+            <h3>Supervised Machine Learning</h3>
+            <p>Regression, classification models, evaluation metrics, and predictive modeling concepts.</p>
+            <span class="project-tag">Aug 2024</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- 
+	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+      <div class="container">
+		<div class="row d-md-flex align-items-center">
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="5">0</strong>
+                <span>Achievements</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="10">0</strong>
+                <span>Projects</span>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="1000">0</strong>
+                <span>Mentored Students</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="500">0</strong>
+                <span>Cups of coffee</span>
+              </div> -->
+            <!-- </div>
+          </div>
+        </div>
+      </div>
+	 -->
+	  <!-- <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/background1.jpg)"> -->
+			<!-- <div class="container"> -->
+				<!-- <div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>More projects on<span> Github  </span> </h2>
+						<div class="heading"> <h4> I love to solve business problems &amp; uncover hidden data stories </h4>
+						<br>
+						<p><a href="https://github.com/Subhadeep12209475" class="btn btn-primary py-3 px-5">GitHub</a></p>
+						</div>
+					</div>
+				</div>
+			<!-- </div> -->
+		<!-- </div>
+	</section> -->
+
+
+
+    <section class="ftco-section contact-section ftco-no-pb reveal" id="contact-section">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section text-center ftco-animate">
+        <h1 class="big big-2">Contact</h1>
+        <h2 class="mb-4">Contact Me</h2>
+        <p>
+          Feel free to reach out for collaboration, internships, freelance work,
+          or any professional opportunity.
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Boxes -->
+    <div class="row d-flex contact-info mb-5">
+
+      <!-- Address -->
+      <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+        <div class="align-self-stretch box p-4 text-center">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <span class="icon-map-signs"></span>
+          </div>
+          <h3 class="mb-4">Location</h3>
+          <p>Bankura, West Bengal, India</p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+        <div class="align-self-stretch box p-4 text-center">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <span class="icon-phone2"></span>
+          </div>
+          <h3 class="mb-4">Phone</h3>
+          <p>
+            <a href="tel:+918016658287">+91 80166 58287</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+        <div class="align-self-stretch box p-4 text-center">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <span class="icon-paper-plane"></span>
+          </div>
+          <h3 class="mb-4">Email</h3>
+          <p>
+            <a href="mailto:subhadeepmukherjee2019@gmail.com">
+              subhadeepmukherjee2019@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Resume -->
+      <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+        <div class="align-self-stretch box p-4 text-center">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <span class="icon-globe"></span>
+          </div>
+          <h3 class="mb-4">Resume</h3>
+          <p>
+            <a
+              href="https://drive.google.com/file/d/1ulnvR7qZyUdYJN3KKbsyIC6O2RRXavN3/view?usp=sharing"
+              target="_blank"
+            >
+              View / Download
+            </a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Social Links -->
+    <div class="row">
+      <div class="col-md-12 text-center ftco-animate">
+        <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+          <li class="normal-txt mr-3">Find me on</li>
+
+          <li class="ftco-animate">
+            <a href="https://www.linkedin.com/in/subhadeep-mukherjee-1b9343259/" target="_blank">
+              <span class="icon-linkedin"></span>
+            </a>
+          </li>
+
+          <li class="ftco-animate">
+            <a href="https://x.com/Venomsubho" target="_blank">
+              <span class="icon-twitter"></span>
+            </a>
+          </li>
+
+          <li class="ftco-animate">
+            <a href="https://www.facebook.com/subhadeep.mukherjee.71465" target="_blank">
+              <span class="icon-facebook"></span>
+            </a>
+          </li>
+
+          <li class="ftco-animate">
+            <a href="https://www.instagram.com/_.spystories._/?hl=en" target="_blank">
+              <span class="icon-instagram"></span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <br><br>
+
+  </div>
+</section>
+
+
+
+ 
+	
+    <!-- <footer class="ftco-footer ftco-section">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-12 text-center">
+  
+			  <p>Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+	Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.</p>
+			</div>
+		  </div>
+		</div>
+	  </footer> -->
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+    <script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const revealPoint = 120;
+
+      if (elementTop < windowHeight - revealPoint) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  window.addEventListener("scroll", () => {
+    reveals.forEach((el) => {
+      const elementTop = el.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (elementTop < windowHeight - 120) {
+        el.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  window.addEventListener("scroll", () => {
+    reveals.forEach((el) => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+  </body>
+</html>
